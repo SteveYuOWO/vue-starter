@@ -1,5 +1,8 @@
+<script lang="ts" setup>
+import Tip from "@/components/Tip.vue";
+</script>
 <template>
-  <div :class="['flex-1', 'grid place-items-center', 'text-gray-400']">
-    Just a demo, try to use vue write something...
-  </div>
+  <main :class="['flex-1', 'grid place-items-center']">
+    <Tip tip="Just a demo, try to use vue write something..." />
+  </main>
 </template>
