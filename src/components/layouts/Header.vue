@@ -2,9 +2,17 @@
   <header
     :class="['px-8 py-4', 'bg-gray-800', 'flex justify-between items-center']"
   >
-    <div :class="['flex items-center', 'text-xl text-white font-bold']">
-      <img class="w-10 h-10" src="@/assets/vue.svg" alt="vue logo" />
-      <p class="ml-4">Vue Starter</p>
+    <div class="flex items-center gap-8">
+      <router-link
+        to="/"
+        :class="['flex items-center', 'text-xl text-white font-bold']"
+      >
+        <img class="w-10 h-10" src="@/assets/vue.svg" alt="vue logo" />
+        <p class="ml-4">Vue Starter</p>
+      </router-link>
+      <div class="links">
+        <router-link to="/counter">Counter</router-link>
+      </div>
     </div>
 
     <div class="hidden md:block">
@@ -31,3 +39,11 @@
     </div>
   </header>
 </template>
+<style language="css" scoped>
+.links {
+  @apply text-gray-100 text-base font-semibold;
+}
+.links > a {
+  @apply hover:text-gray-500 hover:underline duration-300;
+}
+</style>
