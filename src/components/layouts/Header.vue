@@ -11,7 +11,7 @@
         <p class="ml-4">Vue Starter</p>
       </router-link>
       <div class="links">
-        <router-link to="/counter">Counter</router-link>
+        <router-link to="/counter">{{ $t("header.counter") }}</router-link>
         <router-link to="/vue-use">Vue-use</router-link>
       </div>
     </div>
