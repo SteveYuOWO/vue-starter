@@ -10,6 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@vueuse/core": "^10.2.1",
     "floating-vue": "^2.0.0-beta.22",
     "pinia": "^2.1.4",
     "prettier": "^2.8.8",

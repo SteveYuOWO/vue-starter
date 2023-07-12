@@ -12,6 +12,7 @@
       </router-link>
       <div class="links">
         <router-link to="/counter">Counter</router-link>
+        <router-link to="/vue-use">Vue-use</router-link>
       </div>
     </div>
 
@@ -42,6 +43,7 @@
 <style language="css" scoped>
 .links {
   @apply text-gray-100 text-base font-semibold;
+  @apply flex gap-4;
 }
 .links > a {
   @apply hover:text-gray-500 hover:underline duration-300;
