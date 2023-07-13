@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+import LanguageDropdown from "@/components/LanguageDropdown.vue";
+</script>
 <template>
   <header
     :class="['px-8 py-4', 'bg-gray-800', 'flex justify-between items-center']"
@@ -24,20 +27,11 @@
           'px-5',
           'text-green-700 text-base font-semibold',
         ]"
-        placeholder="Searching..."
+        :placeholder="$t('header.searching')"
       />
     </div>
 
-    <div
-      :class="[
-        'text-xs font-bold text-white',
-        'border-2 rounded-full p-1',
-        'cursor-not-allowed',
-      ]"
-      v-tooltip="'Coming soon'"
-    >
-      EN
-    </div>
+    <LanguageDropdown />
   </header>
 </template>
 <style language="css" scoped>

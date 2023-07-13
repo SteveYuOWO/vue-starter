@@ -1,6 +1,7 @@
 {
   "header": {
-    "counter": "Counter"
+    "counter": "Counter",
+    "searching": "Searching..."
   },
   "homepage": {
     "tip": "Just a demo, try to use vue write something..."

@@ -1,6 +1,7 @@
 {
   "header": {
-    "counter": "计数器"
+    "counter": "计数器",
+    "searching": "搜索..."
   },
   "homepage": {
     "tip": "只是一个 demo, 尝试使用 Vue 写一些东西..."
