@@ -5,20 +5,34 @@ import {
   w3mProvider,
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/html";
-import { configureChains, createConfig } from "@wagmi/core";
+import {
+  GetAccountResult,
+  GetContractResult,
+  configureChains,
+  createConfig,
+  getContract,
+} from "@wagmi/core";
 import { arbitrum, mainnet, polygon } from "@wagmi/core/chains";
+import { getAccount, getWalletClient } from "@wagmi/core";
 
+interface Web3ModalProps {
+  account: GetAccountResult;
+  contract: GetContractResult;
+  web3modal: Web3Modal;
+}
 export const useWeb3ModalStore = defineStore({
   id: "web3-modal",
-  state: () => ({
-    rawWeb3modal: undefined,
-  }),
+  state: () => ({} as Web3ModalProps),
   getters: {
-    web3modal: (state): Web3Modal => {
-      const rawWeb3modal = state.rawWeb3modal;
-      if (rawWeb3modal) {
-        return rawWeb3modal;
-      }
+    account: () => getAccount(),
+    contract: (state) =>
+      getContract({
+        address: state.account.address as `0x${string}`,
+        abi: `` as any,
+        chainId: 0,
+        walletClient: getWalletClient(), // viem client
+      }),
+    web3modal: (): Web3Modal => {
       const chains = [arbitrum, mainnet, polygon];
       const projectId = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID;
 

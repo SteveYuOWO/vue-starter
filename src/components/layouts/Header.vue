@@ -2,7 +2,11 @@
 import LanguageDropdown from "@/components/LanguageDropdown.vue";
 import { useWeb3ModalStore } from "@/stores/web3modal";
 
-const { web3modal } = useWeb3ModalStore();
+const { web3modal, account, contract: _contract } = useWeb3ModalStore();
+
+console.log({ account });
+
+// contract.abi or invoke ethereum function
 </script>
 <template>
   <header
