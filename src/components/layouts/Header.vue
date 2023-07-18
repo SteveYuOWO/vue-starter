@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import LanguageDropdown from "@/components/LanguageDropdown.vue";
+import { useWeb3ModalStore } from "@/stores/web3modal";
+
+const { web3modal } = useWeb3ModalStore();
 </script>
 <template>
   <header
@@ -31,7 +34,10 @@ import LanguageDropdown from "@/components/LanguageDropdown.vue";
       />
     </div>
 
-    <LanguageDropdown />
+    <div class="flex items-center">
+      <LanguageDropdown />
+      <w3m-core-button class="ml-5" @click="web3modal.openModal" />
+    </div>
   </header>
 </template>
 <style language="css" scoped>
