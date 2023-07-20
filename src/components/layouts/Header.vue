@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import LanguageDropdown from "@/components/LanguageDropdown.vue";
 import { useWeb3ModalStore } from "@/stores/web3modal";
+import {  watchWalletClient } from "@wagmi/core";
 
-const { web3modal, account, contract: _contract } = useWeb3ModalStore();
+const web3modalStore = useWeb3ModalStore();
 
-console.log({ account });
+const {web3modal} = web3modalStore;
+web3modalStore.initSdk();
 
-// contract.abi or invoke ethereum function
+
+watchWalletClient({}, walletClient => console.log({walletClient}))
 </script>
 <template>
   <header
